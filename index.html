@@ -96,5 +96,25 @@
      // if you will write now Country = Saudi Arabia; 
     //  so it will give error in console.
 </script>
+<h1>
+    Let
+</h1>
+<p>
+    In JavaScript, the let keyword is used to declare variables that are block-scoped. Unlike var, which is function-scoped, variables declared with let are only accessible within the block, loop, or expression in which they are used. This makes let useful for preventing variables from being accessed or modified outside their intended scope.
+    
+    Key Characteristics of let:
+    Block Scope: Variables declared with let are confined to the block they are defined in (such as within {}).
+    No Hoisting (like var): While var is hoisted (i.e., can be used before it's declared), let does not allow this; you must declare the variable before using it.
+    Reassignment Allowed: A let variable can be reassigned new values after its declaration.
+</p>
+<script>
+    if (true) {
+    let x = 10;
+    document.write(x + "<br>"); // 10
+}
+
+document.write(x); // Error: x is not defined
+
+</script>
 </body>
 </html>

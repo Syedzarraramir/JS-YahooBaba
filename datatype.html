@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+</head>
+<body>
+    <h1>Data Types</h1>
+    <dt>The Following are data types in JAva Script.</dt>
+    <ol>
+        <li>
+            String
+        </li>
+        <li>
+            Number
+        </li>
+        <li>
+            Boolean
+        </li>
+        <li>
+            Array
+        </li>
+        <li>
+            Object
+        </li>
+        <li>
+            Null
+        </li>
+        <li>
+            Undefined
+        </li>
+    </ol>
+<p>Here we will use the type to get the date type of thing also so let Start.</p>
+
+
+<script>
+    var x = "Hello World!";
+    var X = 123;
+
+    document.write("The JavaScript is case sensitive. It will read differently between capital X and small x.<br>");
+
+    document.write("I am a String, my value is " + x + " My data type is " + typeof(x) + "<br> <br>");
+    document.write("I am a Number, my value is " + X + " My data type is " + typeof(X) + "<br> <br>");
+    
+    var isTrue = true;
+    document.write("I am a Boolean, my value is " + isTrue + " My data type is " + typeof(isTrue) + "<br> <br>");
+    
+    var forWebdevelopment = ["HTML","CSS","JS"];
+    document.write("I am a Array, my value is " + forWebdevelopment + " My data type is " + typeof(forWebdevelopment) + "<br> <br> Here it will give you type Object But we will solve it Later.");
+    
+    var myFullname = {
+    firstName: "Zarrar",
+    lastName: "Amir"
+    };
+    document.write("I am a Object, My value is " + myFullname + " My data type is " + typeof(myFullname) + "<br> <br>")
+    var myData = {
+        firstName: undefined,   // Undefined property
+        lastName: null          // Null property
+    };
+
+    // Display the values and their types
+    document.write("First Name: " + myData.firstName + " | Data type: " + typeof(myData.firstName) + "<br> <br>");
+    document.write("Last Name: " + myData.lastName + " | Data type: " + typeof(myData.lastName) + "<br> <br>");
+</script>
+
+</body>
+</html>
