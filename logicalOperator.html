@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logical Operators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Logical Operators in Programming</h1>
+        <p>Understanding the most commonly used logical operators.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Syntax</th>
+                    <th>Example</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AND (&&)</td>
+                    <td>True if both operands are true</td>
+                    <td>A && B</td>
+                    <td>true && false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>OR (||)</td>
+                    <td>True if at least one operand is true</td>
+                    <td>A || B</td>
+                    <td>true || false</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>NOT (!)</td>
+                    <td>Reverses the boolean value</td>
+                    <td>!A</td>
+                    <td>!true</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>Equality (==)</td>
+                    <td>True if operands are equal</td>
+                    <td>A == B</td>
+                    <td>5 == 5</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>Inequality (!=)</td>
+                    <td>True if operands are not equal</td>
+                    <td>A != B</td>
+                    <td>5 != 3</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>Greater than (&gt;)</td>
+                    <td>True if the left operand is greater than the right</td>
+                    <td>A &gt; B</td>
+                    <td>7 &gt; 4</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>Less than (&lt;)</td>
+                    <td>True if the left operand is less than the right</td>
+                    <td>A &lt; B</td>
+                    <td>3 &lt; 9</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>Greater than or equal (>=)</td>
+                    <td>True if the left operand is greater or equal</td>
+                    <td>A >= B</td>
+                    <td>5 >= 5</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>Less than or equal (<=)</td>
+                    <td>True if the left operand is less or equal</td>
+                    <td>A <= B</td>
+                    <td>3 <= 8</td>
+                    <td>true</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Logical Operators Guide. All rights reserved.
+    </div>
+</body>
+</html>
