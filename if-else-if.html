@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>If, Else If, and Else Statements</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            color: #555;
+            text-align: justify;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>If, Else If, and Else Statements in Programming</h1>
+
+        <!-- IF Section -->
+        <h2>If Statement</h2>
+        <p>The <strong>if</strong> statement is used to execute a block of code if a specified condition is true.</p>
+        <h3>Syntax</h3>
+        <pre>
+if (condition) {
+    // Code to execute if the condition is true
+}
+        </pre>
+        <h3>Example</h3>
+        <pre>
+let age = 20;
+
+if (age >= 18) {
+    console.log("You are eligible to vote.");
+}
+        </pre>
+
+        <!-- ELSE IF Section -->
+        <h2>Else If Statement</h2>
+        <p>The <strong>else if</strong> statement is used to specify a new condition to test if the first condition is false. You can have multiple <code>else if</code> conditions.</p>
+        <h3>Syntax</h3>
+        <pre>
+if (condition1) {
+    // Code to execute if condition1 is true
+} else if (condition2) {
+    // Code to execute if condition1 is false and condition2 is true
+}
+        </pre>
+        <h3>Example</h3>
+        <pre>
+let marks = 75;
+
+if (marks >= 90) {
+    console.log("Grade: A");
+} else if (marks >= 80) {
+    console.log("Grade: B");
+} else if (marks >= 70) {
+    console.log("Grade: C");
+}
+        </pre>
+
+        <!-- ELSE Section -->
+        <h2>Else Statement</h2>
+        <p>The <strong>else</strong> statement is used to execute code if none of the conditions in the <strong>if</strong> or <strong>else if</strong> statements are true.</p>
+        <h3>Syntax</h3>
+        <pre>
+if (condition) {
+    // Code to execute if the condition is true
+} else {
+    // Code to execute if the condition is false
+}
+        </pre>
+        <h3>Example</h3>
+        <pre>
+let temperature = 35;
+
+if (temperature > 40) {
+    console.log("It's too hot!");
+} else if (temperature < 10) {
+    console.log("It's too cold!");
+} else {
+    console.log("The weather is moderate.");
+}
+        </pre>
+
+        <h2>Flow of Execution</h2>
+        <p>The if-else if-else chain works as follows:</p>
+        <ul>
+            <li>The <strong>if</strong> condition is checked first. If true, the code inside the <strong>if</strong> block is executed.</li>
+            <li>If the <strong>if</strong> condition is false, the program moves to the <strong>else if</strong> block and checks its condition.</li>
+            <li>If all conditions are false, the code inside the <strong>else</strong> block (if present) is executed.</li>
+        </ul>
+
+    </div>
+
+    <div class="footer">
+        &copy; 2024 If-Else Statement Guide. All rights reserved.
+    </div>
+</body>
+</html>
