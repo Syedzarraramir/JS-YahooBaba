@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Prompt Box</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            color: #555;
+            text-align: justify;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .code-desc {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function showPrompt() {
+            let userInput = prompt('Please enter your name:');
+            if (userInput !== null && userInput.trim() !== "") {
+                alert('Hello, ' + userInput + '! Welcome to the website.');
+            } else {
+                alert('You did not enter anything.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Prompt Box</h1>
+        <p>The <strong>prompt()</strong> function in JavaScript is used to display a dialog box that prompts the user for input. It provides an input field for the user to type in a response. The user can either submit their response by clicking "OK" or cancel the input by clicking "Cancel".</p>
+
+        <!-- Prompt Box Syntax Section -->
+        <h2>Syntax</h2>
+        <p>The syntax of the prompt box is:</p>
+        <pre>
+let userInput = prompt("Your message here", "Default value");
+
+if (userInput !== null) {
+    // The user entered some value
+} else {
+    // The user canceled the prompt
+}
+        </pre>
+
+        <div class="code-desc">
+            The <code>prompt()</code> method returns the input provided by the user as a string. If the user clicks "OK", the input is returned; if the user clicks "Cancel", <code>null</code> is returned.
+        </div>
+
+        <!-- Example of Prompt Box -->
+        <h2>Example</h2>
+        <p>Here’s an example of a prompt box that asks the user for their name and displays a greeting based on the input:</p>
+        <pre>
+&lt;button onclick="showPrompt()"&gt;Click Me&lt;/button&gt;
+
+function showPrompt() {
+    let userInput = prompt('Please enter your name:');
+    if (userInput !== null && userInput.trim() !== "") {
+        alert('Hello, ' + userInput + '! Welcome to the website.');
+    } else {
+        alert('You did not enter anything.');
+    }
+}
+        </pre>
+        <div class="code-desc">
+            In this example, when the user clicks the "Click Me" button, a prompt dialog appears asking for the user’s name. If the user provides input and clicks "OK", an alert shows a personalized greeting. If the user clicks "Cancel" or provides an empty input, it displays a message indicating no input was provided.
+        </div>
+
+        <!-- Example with Button -->
+        <h2>Try It Out</h2>
+        <p>Click the button below to see the prompt box in action:</p>
+        <button class="button" onclick="showPrompt()">Click Me</button>
+
+        <!-- When to Use Prompt -->
+        <h2>When to Use prompt()</h2>
+        <p>The <code>prompt()</code> function is useful for collecting small amounts of user input, such as asking for a name or password. However, for more complex input or forms, it’s better to use HTML input elements within the page itself for better user experience.</p>
+
+        <!-- Conclusion -->
+        <h2>Conclusion</h2>
+        <p>The <strong>prompt()</strong> function in JavaScript allows for simple and quick user input. However, since it interrupts the flow of the page and has limited styling options, it should be used for basic interactions and not for more sophisticated input collection.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 JavaScript Prompt Box Guide. All rights reserved.
+    </div>
+</body>
+</html>
