@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Conditional (Ternary) Operator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        p {
+            color: #555;
+            text-align: justify;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: auto;
+        }
+
+        .code-desc {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conditional (Ternary) Operator</h1>
+        <p>The <strong>conditional (ternary) operator</strong> is a shorthand way to write simple <strong>if-else</strong> conditions in a single line. It is commonly used when you need to assign a value based on a condition.</p>
+
+        <!-- Ternary Operator Syntax Section -->
+        <h2>Syntax</h2>
+        <p>The syntax for the ternary operator is:</p>
+        <pre>
+condition ? expression_if_true : expression_if_false;
+        </pre>
+
+        <div class="code-desc">
+            If the <code>condition</code> is true, the expression before the colon (<code>expression_if_true</code>) is executed. If the <code>condition</code> is false, the expression after the colon (<code>expression_if_false</code>) is executed.
+        </div>
+
+        <!-- Example of Ternary Operator -->
+        <h2>Example</h2>
+        <p>Here’s a simple example that uses the ternary operator to determine whether a person is an adult or a minor based on their age:</p>
+        <pre>
+let age = 20;
+let result = (age >= 18) ? "You are an adult." : "You are a minor.";
+console.log(result);
+        </pre>
+        <div class="code-desc">
+            In this example, if <code>age</code> is 18 or greater, the result will be "You are an adult."; otherwise, it will be "You are a minor."
+        </div>
+
+        <!-- Another Example Section -->
+        <h2>Another Example</h2>
+        <p>Here’s a ternary operator that checks if a number is even or odd:</p>
+        <pre>
+let number = 5;
+let result = (number % 2 === 0) ? "Even" : "Odd";
+console.log(result);
+        </pre>
+        <div class="code-desc">
+            This checks whether the number is divisible by 2 (i.e., even). If the condition is true, it returns "Even"; otherwise, it returns "Odd."
+        </div>
+
+        <!-- When to Use the Ternary Operator -->
+        <h2>When to Use the Ternary Operator</h2>
+        <p>The ternary operator is useful when you need a quick and simple way to return values based on a condition. However, for more complex logic, using regular <strong>if-else</strong> statements may improve readability.</p>
+
+        <!-- Conclusion -->
+        <h2>Conclusion</h2>
+        <p>The conditional (ternary) operator is a great tool for simplifying your code, especially for small, simple conditions. However, it should be used wisely to avoid making the code difficult to read.</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Ternary Operator Guide. All rights reserved.
+    </div>
+</body>
+</html>
