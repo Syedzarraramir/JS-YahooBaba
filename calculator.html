@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>
+        Calculator
+    </h1>
+    <input id="firstNumber" type="number" placeholder="Enter first number">
+    <input id="secondNumber" type="number" placeholder="Enter second number">
+    <button type="button" onclick="Submit()">Calculate</button>
+    <div class="div" style="width: 50%; justify-self: center;">
+        <p id="result">Result</p>
+        <p id="sub"></p>
+        <p id="mul"></p>
+        <p id="div"></p>
+        <p id="rem"></p>
+        <p id="nameDisplay"></p>
+    </div>
+    <input type="text" id="nameF" placeholder="Enter your name">
+    <script>
+     function Submit(){
+        var a = parseFloat(document.getElementById("firstNumber").value);
+        var b = parseFloat(document.getElementById("secondNumber").value);
+
+        // Calculations
+        var c = a + b;
+        var sub = a - b;
+        var mul = a * b;
+        var div = a / b;
+        var rem = a % b;
+
+        // Displaying results
+        document.getElementById("result").innerText = "Addition of your Two Numbers Result is: " + c;
+        document.getElementById("sub").innerText = "Subtraction of your Two Numbers Result is: " + sub;
+        document.getElementById("mul").innerText = "Multiplication of your Two Numbers Result is: " + mul;
+        document.getElementById("div").innerText = "Division of your Two Numbers Result is: " + div;
+        document.getElementById("rem").innerText = "Remainder of your Two Numbers Result is: " + rem;
+
+        // Display user's name
+        var name = document.getElementById("nameF").value;
+        document.getElementById("nameDisplay").innerText = "Hi " + name + ", here are your calculations!";
+     }
+    </script>
+</body>
+</html>
+
