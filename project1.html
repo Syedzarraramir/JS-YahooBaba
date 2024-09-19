@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        label, input {
+            margin: 10px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #333;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        .fail {
+            color: red;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <title>Marks Calculator</title>
+</head>
+<body>
+    <h1>Marks Calculator</h1>
+    <form>
+        <label for="math">Maths</label>
+        <input id="math" type="number" min="1" max="75" placeholder="Enter Your Math Marks:">
+        <label for="eng">English</label>
+        <input id="eng" type="number" min="1" max="75" placeholder="Enter Your English Marks:"> <br>
+        <label for="isl">Islamiyat</label>
+        <input id="isl" type="number" min="1" max="50" placeholder="Enter Your Islamiyat Marks:">
+        <label for="pak">Pak Study</label>
+        <input id="pak" type="number" min="1" max="50" placeholder="Enter Your Pak Study Marks:"> <br>
+        <label for="chem">Chemistry</label>
+        <input id="chem" type="number" min="1" max="75" placeholder="Enter Your Chemistry Marks:">
+        <label for="phy">Physics</label>
+        <input id="phy" type="number" min="1" max="75" placeholder="Enter Your Physics Marks:"> <br>
+        <label for="urdu">Urdu</label>
+        <input id="urdu" type="number" min="1" max="75" placeholder="Enter Your Urdu Marks:">
+    </form>
+    
+    <button type="button" onclick="generateReport()">Generate Report</button>
+
+    <table id="marksTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Maths</td>
+                <td id="mathMarks"></td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td id="engMarks"></td>
+            </tr>
+            <tr>
+                <td>Islamiyat</td>
+                <td id="islMarks"></td>
+            </tr>
+            <tr>
+                <td>Pak Study</td>
+                <td id="pakMarks"></td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td id="chemMarks"></td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td id="phyMarks"></td>
+            </tr>
+            <tr>
+                <td>Urdu</td>
+                <td id="urduMarks"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+                <th id="totalMarks"></th>
+            </tr>
+            <tr id="percentRow" style="display: none;">
+                <th>Percentage</th>
+                <th id="percentageMarks"></th>
+            </tr>
+            <tr id="gradeRow" style="display: none;">
+                <th>Grade</th>
+                <th id="grade"></th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        function generateReport() {
+            // First, ensure marks are valid
+            fixedMarks();
+
+            // Calculate total and fill table
+            var total = dataTable();
+
+            // Ask the user if they want the percentage
+            percent(total);
+        }
+
+        function dataTable() {
+            // Get values from input fields
+            var math = parseFloat(document.getElementById("math").value) || 0;
+            var eng = parseFloat(document.getElementById("eng").value) || 0;
+            var isl = parseFloat(document.getElementById("isl").value) || 0;
+            var pak = parseFloat(document.getElementById("pak").value) || 0;
+            var chem = parseFloat(document.getElementById("chem").value) || 0;
+            var phy = parseFloat(document.getElementById("phy").value) || 0;
+            var urdu = parseFloat(document.getElementById("urdu").value) || 0;
+
+            // Insert the marks into the table
+            document.getElementById("mathMarks").innerText = math;
+            document.getElementById("engMarks").innerText = eng;
+            document.getElementById("islMarks").innerText = isl;
+            document.getElementById("pakMarks").innerText = pak;
+            document.getElementById("chemMarks").innerText = chem;
+            document.getElementById("phyMarks").innerText = phy;
+            document.getElementById("urduMarks").innerText = urdu;
+
+            // Calculate the total
+            var total = math + eng + isl + pak + chem + phy + urdu;
+            document.getElementById("totalMarks").innerText = total;
+
+            // Display the table
+            document.getElementById("marksTable").style.display = "table";
+            return total;
+        }
+
+        function fixedMarks(){
+            var marks = {
+                "math": {value: parseFloat(document.getElementById("math").value) || 0, max: 75, fail: 27},
+                "eng": {value: parseFloat(document.getElementById("eng").value) || 0, max: 75, fail: 27},
+                "pak": {value: parseFloat(document.getElementById("pak").value) || 0, max: 50, fail: 20},
+                "isl": {value: parseFloat(document.getElementById("isl").value) || 0, max: 50, fail: 20},
+                "chem": {value: parseFloat(document.getElementById("chem").value) || 0, max: 75, fail: 27},
+                "phy": {value: parseFloat(document.getElementById("phy").value) || 0, max: 75, fail: 27},
+                "urdu": {value: parseFloat(document.getElementById("urdu").value) || 0, max: 75, fail: 27}
+            };
+
+            // Apply validation and styling
+            for (var subject in marks) {
+                var mark = marks[subject];
+                var cell = document.getElementById(subject + "Marks");
+                if (mark.value > mark.max || mark.value < 0) {
+                    cell.classList.add("fail");
+                } else if (mark.value < mark.fail) {
+                    cell.classList.add("fail");
+                } else {
+                    cell.classList.remove("fail");
+                }
+            }
+        }
+
+        function percent(total){
+            let confirmPercentage = confirm('Do you want to see the percentage?');
+            if (confirmPercentage) {
+                var percentage = (total / 550) * 100;
+                alert('Your percentage is: ' + percentage.toFixed(2) + '%');
+                document.getElementById("percentageMarks").innerText = percentage.toFixed(2) + '%'; 
+                document.getElementById("percentRow").style.display = "table-row"; 
+                
+                var grade;
+                if (percentage < 33) {
+                    grade = "FAIL";
+                } else if (percentage <= 50) {
+                    grade = "D";
+                } else if (percentage <= 60) {
+                    grade = "C";
+                } else if (percentage <= 70) {
+                    grade = "B";
+                } else if (percentage < 80) {
+                    grade = "A";
+                } else {
+                    grade = "A+";
+                }
+
+                document.getElementById("grade").innerText = grade; 
+                document.getElementById("gradeRow").style.display = "table-row"; 
+            }
+        }
+    </script>
+</body>
+</html>
