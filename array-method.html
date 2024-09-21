@@ -30,12 +30,75 @@
     <h1 style="text-align: center;">Here I Use Reverse() Method</h1>
     <script>
         var reversedNames = [...names];  // Create a copy of the original names array
-        reversedNames.reverse();  // Reverse the array
+        reversedNames.reverse();  
         document.write("<ul>");
         for (var a = 0; a < reversedNames.length; a++) {  
             document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
         }
         document.write("</ul>");
     </script>
+    
+    <h1 style="text-align: center;">Here I Use Pop() Method</h1>
+    <script>
+        var reversedNames = [...names];  // Create a copy of the original names array
+        reversedNames.pop();  
+        document.write("<ul>");
+        for (var a = 0; a < reversedNames.length; a++) {  
+            document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
+        }
+        document.write("ZARRAR is removed" + "</ul>");
+    </script>
+    
+    <h1 style="text-align: center;">Here I Use Push() Method</h1>
+    <script>
+        var reversedNames = [...names];  // Create a copy of the original names array
+        reversedNames.push("QUAID-E-AZAM");  
+        document.write("<ul>");
+        for (var a = 0; a < reversedNames.length; a++) {  
+            document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
+        }
+        document.write("QUAID-E-AZAM is Added to Array" + "</ul>");
+    </script>
+       <h1 style="text-align: center;">Here I Use Shift() Method Which Delete The First Element Of Array</h1>
+       <script>
+           var reversedNames = [...names];  // Create a copy of the original names array
+           reversedNames.shift();  
+           document.write("<ul>");
+           for (var a = 0; a < reversedNames.length; a++) {  
+               document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
+           }
+           document.write("First Name is Deleted" + "</ul>");
+       </script>
+          <h1 style="text-align: center;">Here I Use Unshift() Method</h1>
+          <script>
+              var reversedNames = [...names];  // Create a copy of the original names array
+              reversedNames.unshift("Allama Muhammad Iqbal");  
+              document.write("<ul>");
+              for (var a = 0; a < reversedNames.length; a++) {  
+                  document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
+              }
+              document.write("Allama Muhammad Iqbal is Added at top" + "</ul>");
+          </script>
+           <h1 style="text-align: center;">Here I Use Concat() Method</h1>
+           <script>
+               var names = ["Ali", "Ahmed", "Sara"]; // Define your original names array
+               var reversedNames = [...names];  // Create a copy of the original names array
+               var b = reversedNames.concat("Khizar", "Haroon");  
+           
+               document.write("<ul>");
+               for (var a = 0; a < b.length; a++) {  // Use 'b' instead of 'reversedNames'
+                   document.write("<li style='text-transform: uppercase;'>" + b[a] + "</li>");
+               }
+               document.write("</ul>");
+           </script>
+         <h1 style="text-align: center;">Here I Use Join() Method</h1>
+         <script>
+             var names = ["ALI", "AHMAD", "OWAIS", "ROOHULLAH", "ISMAIL"];
+             var joinedNames = names.join(" - "); // Join the names with " - "
+     
+             // Display the joined names
+             document.write("<h1 style='text-align: center; color: red;'>" + joinedNames + "</h1>");
+         </script>
+          
 </body>
 </html>
