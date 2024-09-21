@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Method</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Here I Give Random Names</h1>
+    <script>
+        var names = ["zarrar", "ali", "usman", "billal", "umair", "shahbaz", "muhammad", "khan", "owais", "obaid", "ismail", "uzair", "basit"];
+        document.write("<ul>");
+        for (var a = 0; a < names.length; a++) {  
+            document.write("<li style='text-transform: uppercase;'>" + names[a] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+
+    <h1 style="text-align: center;">Here I Use Sort() Method</h1>
+    <script>
+        var sortedNames = [...names];  // Create a copy of the original names array
+        sortedNames.sort();  // Sort the array
+        document.write("<ul>");
+        for (var a = 0; a < sortedNames.length; a++) {  
+            document.write("<li style='text-transform: uppercase;'>" + sortedNames[a] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+
+    <h1 style="text-align: center;">Here I Use Reverse() Method</h1>
+    <script>
+        var reversedNames = [...names];  // Create a copy of the original names array
+        reversedNames.reverse();  // Reverse the array
+        document.write("<ul>");
+        for (var a = 0; a < reversedNames.length; a++) {  
+            document.write("<li style='text-transform: uppercase;'>" + reversedNames[a] + "</li>");
+        }
+        document.write("</ul>");
+    </script>
+</body>
+</html>

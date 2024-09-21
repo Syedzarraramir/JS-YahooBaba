@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var marks = [32,32,43,53,34,23];
+        var sum = 0;
+        for(a = 0; a <= 5; a++){
+            document.write(marks[a] + "<br>");
+        // to sum total marks
+        sum = sum + marks[a];
+        }
+        document.write(sum +"<br>");
+    </script>
+
+
+
+<script>
+    document.write("<br>")
+    var marks = new Array();
+    var subject = ["Maths", "English", "Urdu", "Pak-Study", "Physics", "Computer"];
+    
+    // Loop to prompt the user for each subject's marks
+    for (var sub = 0; sub < subject.length; sub++) {  // Changed to sub < subject.length
+        marks[sub] = parseInt(prompt("Enter Your " + subject[sub] + " Marks:"), 10);
+    }
+
+    // Displaying the marks and calculating the sum
+    var sum = 0;
+    for (var a = 0; a < marks.length; a++) {  // Changed to a < marks.length
+        document.write(subject[a] + " Marks: " + marks[a] + "<br>");
+        sum += marks[a];  // Summing the marks
+    }
+
+    document.write("<br>Total Marks: " + sum);
+</script>
+
+</body>
+</html>
