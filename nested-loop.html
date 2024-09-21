@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loop</title>
+</head>
+<body>
+    <script>
+        for(var a = 1; a <= 5; a++){
+            for(var b = 1; b <= a; b++){
+                console.time("Time");
+                document.write(b  + " ");
+                console.warn("The Nested Loop Run Successfully");
+                console.timeEnd("Time");
+                
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>
