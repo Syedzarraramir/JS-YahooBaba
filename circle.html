@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle of Stars</title>
+    <style>
+        /* Style for centering the text on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .star {
+            position: absolute;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+
+    <script>
+        // Function to create a circle of stars
+        function createStarCircle(radius, numStars) {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const container = document.getElementById("circle");
+
+            for (let i = 0; i < numStars; i++) {
+                const angle = (i / numStars) * 2 * Math.PI;
+                const x = centerX + radius * Math.cos(angle);
+                const y = centerY + radius * Math.sin(angle);
+
+                // Create a star element
+                const star = document.createElement("div");
+                star.classList.add("star");
+                star.textContent = "*";
+                star.style.left = x + "px";
+                star.style.top = y + "px";
+
+                // Append the star to the container
+                container.appendChild(star);
+            }
+        }
+
+        // Adjust the radius and number of stars
+        createStarCircle(200, 30); // radius: 200px, 30 stars
+    </script>
+</body>
+</html>
