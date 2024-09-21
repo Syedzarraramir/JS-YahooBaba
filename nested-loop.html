@@ -7,36 +7,68 @@
 </head>
 <body>
     <script>
-        for(var a = 1; a <= 5; a++){
-            for(var b = 1; b <= a; b++){
-                console.time("Time");
-                document.write(b  + " ");
-                console.warn("The Nested Loop Run Successfully");
-                console.timeEnd("Time");
-                
+        // Start measuring time for the entire operation
+        console.time("TotalTime");
+
+        // Pattern 1: Incrementing numbers
+        for (var a = 1; a <= 5; a++) {
+            for (var b = 1; b <= a; b++) {
+                document.write(b + " ");
             }
-            document.write("<br>")
+            document.write("<br>");
         }
-        for(var a = 1; a <= 5; a++){
-            for(var b = 1; b <= a; b++){
-                console.time("Time");
-                document.write("*"  + " ");
-                console.warn("The Nested Loop Run Successfully");
-                console.timeEnd("Time");
-                
+
+        // Pattern 2: Stars
+        for (var a = 1; a <= 5; a++) {
+            for (var b = 1; b <= a; b++) {
+                document.write("*" + " ");
             }
-            document.write("<br>")
+            document.write("<br>");
         }
-        for(var a = 5; a >= 1; a--){
-            for(var b = 5; b >= a; b--){
-                console.time("Time");
-                document.write(b  + " ");
-                console.warn("The Nested Loop Run Successfully");
-                console.timeEnd("Time");
-                
+
+        // Pattern 3: Decrementing number in each row, starting from row index
+        for (var a = 5; a >= 1; a--) {
+            for (var b = 5; b >= a; b--) {
+                document.write(a + " ");
             }
-            document.write("<br>")
+            document.write("<br>");
         }
+
+        // Pattern 4: Repeating current row index
+        for (var a = 1; a <= 5; a++) {
+            for (var b = 1; b <= a; b++) {
+                document.write(a + " ");
+            }
+            document.write("<br>");
+        }
+
+        // Pattern 5: Decreasing numbers by row count
+        for (var a = 5; a >= 1; a--) {
+            for (var b = 1; b <= a; b++) {
+                document.write(a + " ");
+            }
+            document.write("<br>");
+        }
+
+        // Pattern 6: Decreasing numbers in each row
+        for (var a = 5; a >= 1; a--) {
+            for (var b = a; b >= 1; b--) {
+                document.write(b + " ");
+            }
+            document.write("<br>");
+        }
+
+        // Pattern 7: Similar to Pattern 6 but with warnings
+        for (var a = 5; a >= 1; a--) {
+            for (var b = a; b >= 1; b--) {
+                document.write(b + " ");
+                console.warn("The Nested Loop Run Successfully");
+            }
+            document.write("<br>");
+        }
+
+        // End measuring time for the entire operation
+        console.timeEnd("TotalTime");
     </script>
 </body>
 </html>
