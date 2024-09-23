@@ -100,5 +100,20 @@
              document.write("<h1 style='text-align: center; color: red;'>" + joinedNames + "</h1>");
          </script>
           
+
+          <h1 style="text-align: center;">Here I Use Slice() Method</h1>
+          <script>
+            var a = ["Ali", "Zarrar", "Haider", "Owais", "Adnan"];
+            document.write("Original array a: " + a + "<br>");  // Display the original array
+          
+            var b = a.slice(1, 3);  // Extract elements from index 1 to 2
+            document.write("Array b after slice(1, 3): " + b + "<br>");  // Display sliced array
+          
+            b.splice(1, 0, "This Happened due to Splice Method");  // Insert element at index 1
+            document.write("Array b after splice: " + b + "<br>");  // Display array b after splice
+          </script>
+          
+
+
 </body>
 </html>
