@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+<body>
+    <script>
+      var accountBalance = 5000;
+    var widthDrawAmoount;
+    
+    do {
+        widthDrawAmoount = +prompt("Enter the amount you want to withdraw:");
+        
+        if (widthDrawAmoount <= accountBalance && widthDrawAmoount > 0) {
+            accountBalance -= widthDrawAmoount;
+            alert("You performed a transaction of Rs: " + widthDrawAmoount + ". Your remaining account balance is Rs: " + accountBalance + ". Thank you for visiting the ATM.");
+        } else if (widthDrawAmoount <= 0) {
+            alert("Please enter a valid amount.");
+        } else {
+            alert("You do not have sufficient balance for this transaction. Kindly check your account balance.");
+        }
+        
+    } while (accountBalance > 0 && widthDrawAmoount !== null);
+
+    if (accountBalance <= 0) {
+        alert("Your account balance is empty.");
+    }
+    </script>
+</body>
+</html>
