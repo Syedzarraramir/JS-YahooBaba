@@ -6,27 +6,89 @@
     <title>ATM</title>
 </head>
 <body>
-    <script>
-      var accountBalance = 5000;
-    var widthDrawAmoount;
+    <table>
+        <tr>
+            <th>Balance:</th>
+            <th>WithDraw:</th>
+            <th>Remaining Account Balance:</th>
+        </tr>
+        <tr>
+            <td><input type="number" value="000000" id="balance"></td>
+            <td><p id="withDraw" style="width: 100px;"></p></td>
+            <td><p id="remainingBalance" style="width: 100px;"></p></td>
+        </tr>
+    </table>
     
-    do {
-        widthDrawAmoount = +prompt("Enter the amount you want to withdraw:");
-        
-        if (widthDrawAmoount <= accountBalance && widthDrawAmoount > 0) {
-            accountBalance -= widthDrawAmoount;
-            alert("You performed a transaction of Rs: " + widthDrawAmoount + ". Your remaining account balance is Rs: " + accountBalance + ". Thank you for visiting the ATM.");
-        } else if (widthDrawAmoount <= 0) {
-            alert("Please enter a valid amount.");
-        } else {
-            alert("You do not have sufficient balance for this transaction. Kindly check your account balance.");
+    <button type="button" onclick="ATM()">ENTER</button>
+    
+    <!-- Table to display all transactions -->
+    <h3>Transaction History</h3>
+    <table id="transactionHistory" border="1">
+        <tr>
+            <th>Transaction Number</th>
+            <th>Withdraw Amount</th>
+            <th>Remaining Balance</th>
+        </tr>
+    </table>
+    
+    <script>
+    let transactionCount = 0; // To keep track of the number of transactions
+    
+    function ATM() {
+        var accountBalance = parseFloat(document.getElementById("balance").value);
+        var withdrawAmount;
+    
+        // Loop for transactions
+        do {
+            withdrawAmount = +prompt("Enter the amount you want to withdraw:");
+    
+            // Check if prompt was cancelled or the value is invalid
+            if (withdrawAmount === null || isNaN(withdrawAmount)) {
+                break;
+            }
+    
+            // Ensure valid withdrawal amount
+            if (withdrawAmount <= accountBalance && withdrawAmount > 0) {
+                accountBalance -= withdrawAmount;
+                document.getElementById("withDraw").textContent = withdrawAmount;
+                document.getElementById("remainingBalance").textContent = accountBalance;
+    
+                // Record the transaction
+                transactionCount++;
+                recordTransaction(transactionCount, withdrawAmount, accountBalance);
+    
+                alert("You performed a transaction of Rs: " + withdrawAmount + ". Your remaining account balance is Rs: " + accountBalance + ". Thank you for visiting the ATM.");
+            } else if (withdrawAmount <= 0) {
+                alert("Please enter a valid amount.");
+            } else {
+                alert("You do not have sufficient balance for this transaction. Kindly check your account balance.");
+            }
+        } while (accountBalance > 0 && withdrawAmount !== null);
+    
+        // If the account balance becomes zero or less
+        if (accountBalance <= 0) {
+            alert("Your account balance is empty.");
         }
-        
-    } while (accountBalance > 0 && widthDrawAmoount !== null);
-
-    if (accountBalance <= 0) {
-        alert("Your account balance is empty.");
+    }
+    
+    // Function to record the transaction in the history table
+    function recordTransaction(transactionNum, withdrawAmount, remainingBalance) {
+        var transactionTable = document.getElementById("transactionHistory");
+    
+        // Create a new row
+        var row = transactionTable.insertRow();
+    
+        // Insert cells for the transaction number, withdraw amount, and remaining balance
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+    
+        // Set the cell values
+        cell1.textContent = transactionNum;
+        cell2.textContent = withdrawAmount;
+        cell3.textContent = remainingBalance;
     }
     </script>
+    <h1>ATM Machine Created</h1>
 </body>
 </html>
