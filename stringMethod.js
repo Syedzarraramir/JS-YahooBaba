@@ -38,3 +38,9 @@ var string = "JavaScript";
 var g = string.search("S");
 //it will show the length
 console.log(g);
+
+//It will Replace the words
+var string = "JavaScript";
+var h = string.replace(/Script/g, "High Level Language");
+// it will show the length of the result string
+console.log(h.length);
