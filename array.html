@@ -38,6 +38,55 @@
 
     document.write("<br>Total Marks: " + sum);
 </script>
+<script>
+var myName = ["z","a","r","r","a","r","a","m","i","r"];
+myName.sort();
+console.log(myName);
+var myNameReverse = ["z","a","r","r","a","r","a","m","i","r"];
+myNameReverse.reverse();
+console.log(myNameReverse);
+</script>
+<script>
+    var myname = ["Zarrar","Obaid","Owais"];
+    myname.pop();
+    console.log(myname);
+</script>
+    <script> 
+        var Name = ["Zarrar","Obaid","Owais"];
+        Name.push("Sir Asghar");
+        console.log(Name);
 
+    </script>
+    <script>
+        var shift = ["Zarrar","Obaid","Owais"];
+        shift.shift();
+        console.log(shift);
+    </script>
+    <script>
+        var unshift = ["Zarrar","Obaid","Owais"];
+        unshift.unshift("Sir Asghar");
+        console.log(unshift);
+    </script>
+    <script>
+    var ages = [12,12,34,43,23,12,13,54,18,23,34,33,22,55,23,75,85,65,3,4,2,4,24,5,6];
+    var b =ages.filter(checkadults);
+    console.log(b);
+    function checkadults(age){
+        return age >= 18 && age <=60;
+    } 
+    var c = ages.filter(smallages);
+    console.log("Small Ages is :" + c);
+    function smallages(age){
+        return age < 18;
+    }
+    var d = ages.filter(oldages);
+    console.log("Old Ages is :" + d);
+    function oldages(age){
+        return age > 60;
+    }
+    </script>
+<script>
+    
+</script>
 </body>
 </html>
