@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick vs trigger Example</title>
+</head>
+<body>
+
+    <!-- User-interactive button -->
+    <button id="userButton">Click Me (onclick)</button>
+    
+    <!-- Programmatically triggering button -->
+    <button id="triggerButton">Trigger the Above Button Programmatically</button>
+    
+    <p id="output"></p>
+
+    <script>
+        const userButton = document.getElementById('userButton');
+        const triggerButton = document.getElementById('triggerButton');
+        const output = document.getElementById('output');
+
+        // Define the onclick event for the first button
+        userButton.onclick = function() {
+            output.innerHTML = 'User button was clicked!';
+        };
+
+        // When the trigger button is clicked, it will simulate the userButton's click event
+        triggerButton.onclick = function() {
+            output.innerHTML = 'Trigger button clicked, now simulating user button click...';
+
+            // Create and dispatch the click event for the user button
+            const event = new Event('click');
+            userButton.dispatchEvent(event);  // Programmatically triggers userButton's click event
+        };
+    </script>
+
+</body>
+</html>
+iframe.
