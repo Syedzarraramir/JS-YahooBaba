@@ -101,3 +101,24 @@ console.log(milliSeconds);
 //Table
 var table = [date,month,todayDate,day,hour,minutes,seconds,milliSeconds];
 console.table(table);
+
+
+// var a = "Zarrar ";
+// var b = "Owais";
+// var c = [];
+// c.unshift(a , b);
+// alert("The Members are : " + c);
+//
+//
+//
+//All Method are Almost Doned
+// var number1;
+// var number2;
+// var sum;
+// 
+// for (number1 = 1; number1 <= 10; number1++) {
+//     for (number2 = number1; number2 <= 10; number2++) {
+//         sum = number1 + number2;
+//         alert("Number1: " + number1 + ", Number2: " + number2 + ", Result: " + sum);
+//     }
+// }
